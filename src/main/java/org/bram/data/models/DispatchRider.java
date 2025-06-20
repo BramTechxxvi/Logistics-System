@@ -1,4 +1,4 @@
 package org.bram.data.models;
 
-public class DispatchRider {
+public class DispatchRider extends User{
 }
