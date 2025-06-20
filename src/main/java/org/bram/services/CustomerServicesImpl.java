@@ -3,5 +3,5 @@ package org.bram.services;
 import org.springframework.stereotype.Service;
 
 @Service
-public class CustomerServicesImpl implemen{
+public class CustomerServicesImpl implements CustomerServices{
 }
