@@ -2,6 +2,6 @@ package org.bram.dtos.response;
 
 import lombok.Data;
 
-@Datafs
+@Data
 public class RiderRegisterResponse {
 }
