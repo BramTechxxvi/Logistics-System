@@ -1,5 +1,6 @@
 package org.bram.services;
 
+import org.bram.data.models.Customer;
 import org.bram.data.repositories.CustomerRepository;
 import org.bram.dtos.request.CustomerRegisterRequest;
 import org.bram.dtos.request.LoginRequest;
@@ -20,7 +21,19 @@ public class CustomerServicesImpl implements CustomerServices{
 
     @Override
     public CustomerRegisterResponse registerCustomer(CustomerRegisterRequest request) {
-        return null;
+        Customer customer = new Customer();
+        customer.setFirstName(request.getFirstName());
+        customer.setLastName(request.getLastName());
+        customer.setEmail(request.getEmail());
+        customer.setPassword(request.getPassword());
+        customer.setAddress(request.getAddress());
+        customer.setPhoneNumber(request.getPhoneNumber());
+        customerRepository.save(customer);
+
+        CustomerRegisterResponse response = new CustomerRegisterResponse();
+        response.setSuccess(true);
+        response.setMessage("Registered successfully");
+        return response;
     }
 
     @Override

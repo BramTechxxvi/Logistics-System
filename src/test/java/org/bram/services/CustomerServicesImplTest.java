@@ -28,9 +28,20 @@ class CustomerServicesImplTest {
     }
 
     @Test
-    public void krmgleg() {}
+    public void registerCustomerTest() {
+        registerCustomer();
+        assertEquals(customerRepository.count(), 1);
+        assertEquals("Registered successfully", registerResponse.getMessage());
+    }
 
     private void registerCustomer() {
+        registerRequest.setFirstName("Hakeem");
+        registerRequest.setLastName("Tekashi");
+        registerRequest.setEmail("hakeemtekashi@gmail.com");
+        registerRequest.setPassword("hakeem123");
+        registerRequest.setAddress("123 Hakeem street");
+        registerRequest.setPhoneNumber("0902 328 3932");
+        registerResponse = customerServices.registerCustomer(registerRequest);
 
     }
 
